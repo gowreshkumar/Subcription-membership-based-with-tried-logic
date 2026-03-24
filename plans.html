@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Plans – Member Vaults</title>
+  <meta name="description" content="Compare Member Vaults subscription plans — Free, Silver, Gold, Premium. Upgrade anytime for more access."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <nav class="navbar">
+    <div class="container">
+      <a class="nav-logo" href="index.html"><span>🔐</span> Member Vaults</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="plans.html" class="active">Plans</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="nav-user">
+          <span>👤</span><span><strong id="nav-username">…</strong></span>
+        </div>
+        <button class="btn btn-ghost btn-sm" onclick="logout()">Sign Out</button>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="container">
+
+      <div class="section-head" style="margin-top:1rem">
+        <h1>Choose Your <span class="gradient-text">Plan</span></h1>
+        <p>Unlock more of the vault. Upgrade or switch plans anytime — changes are instant.</p>
+      </div>
+
+      <!-- Plans Grid -->
+      <div id="plans-container" class="plans-grid" style="max-width:1100px;margin:0 auto">
+        <!-- JS will inject plan cards here -->
+        <div class="flex-center" style="padding:4rem 0;grid-column:1/-1">
+          <div class="spinner"></div>
+        </div>
+      </div>
+
+      <!-- Comparison table -->
+      <div class="glass mt-3" style="padding:2rem;border-radius:var(--radius-lg);margin-top:3rem">
+        <h2 style="text-align:center;margin-bottom:1.5rem;font-size:1.3rem;font-weight:700">
+          📊 Full Feature Comparison
+        </h2>
+        <div style="overflow-x:auto">
+          <table class="data-table" style="min-width:600px">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th style="color:#6b7280">🆓 Free</th>
+                <th style="color:#94a3b8">🥈 Silver</th>
+                <th style="color:#f59e0b">🥇 Gold</th>
+                <th style="color:#a855f7">💎 Premium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Public Articles</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Community Access</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Community Forum</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Monthly Newsletter</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Download Resources</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Premium Tutorials (200+)</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Priority Support</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Advanced Analytics</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Exclusive Vault Content</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
+              <tr><td>1-on-1 Mentoring Sessions</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
+              <tr><td>Personal API Key</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
+              <tr><td>Lifetime Updates</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
+              <tr>
+                <td style="font-weight:700">Price</td>
+                <td style="color:#6b7280;font-weight:700">Free</td>
+                <td style="color:#94a3b8;font-weight:700">$9.99/mo</td>
+                <td style="color:#f59e0b;font-weight:700">$19.99/mo</td>
+                <td style="color:#a855f7;font-weight:700">$39.99/mo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 <span class="gradient-text">Member Vaults</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/plans.js"></script>
+</body>
+</html>

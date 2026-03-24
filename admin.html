@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Admin Panel – Member Vaults</title>
+  <meta name="description" content="Member Vaults admin panel — manage users, subscriptions, and view platform statistics."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="nav-logo" href="index.html"><span>🔐</span> Member Vaults</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="admin.html" class="active">Admin Panel</a></li>
+      </ul>
+      <div class="nav-actions">
+        <span class="tag tag-purple" style="font-size:.75rem">⚡ Admin</span>
+        <div class="nav-user" style="margin-left:.5rem">
+          <span>👤</span><strong id="nav-username">…</strong>
+        </div>
+        <button class="btn btn-ghost btn-sm" onclick="logout()">Sign Out</button>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="container">
+
+      <!-- Header -->
+      <div style="margin-bottom:2rem">
+        <p class="small" style="color:var(--text-muted)">ADMIN CONTROL CENTER</p>
+        <h1 style="font-size:1.9rem;font-weight:900">
+          Platform <span class="gradient-text">Overview</span>
+        </h1>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="grid-4 mb-3">
+        <div class="admin-stat glass">
+          <div class="admin-stat-icon">👥</div>
+          <div class="admin-stat-value neon-text" id="stat-users">—</div>
+          <div class="admin-stat-label">Total Users</div>
+        </div>
+        <div class="admin-stat glass">
+          <div class="admin-stat-icon">✅</div>
+          <div class="admin-stat-value" style="color:var(--neon-purple)" id="stat-subs">—</div>
+          <div class="admin-stat-label">Active Subscriptions</div>
+        </div>
+        <div class="admin-stat glass">
+          <div class="admin-stat-icon">💰</div>
+          <div class="admin-stat-value neon-gold" id="stat-revenue">—</div>
+          <div class="admin-stat-label">Active MRR</div>
+        </div>
+        <div class="admin-stat glass">
+          <div class="admin-stat-icon">🔐</div>
+          <div class="admin-stat-value" style="color:var(--neon-pink)">4</div>
+          <div class="admin-stat-label">Plan Tiers</div>
+        </div>
+      </div>
+
+      <!-- Two-column layout: Plan dist + User Table -->
+      <div class="grid-2" style="align-items:start;gap:1.5rem;margin-bottom:2rem">
+
+        <!-- Plan Distribution -->
+        <div class="glass" style="padding:1.75rem;border-radius:var(--radius-lg)">
+          <h2 style="font-size:1rem;font-weight:700;margin-bottom:1.25rem">📊 Plan Distribution</h2>
+          <div id="plan-dist">
+            <div class="spinner" style="margin:.5rem auto"></div>
+          </div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="glass" style="padding:1.75rem;border-radius:var(--radius-lg)">
+          <h2 style="font-size:1rem;font-weight:700;margin-bottom:1rem">🔧 Quick Info</h2>
+          <div style="display:flex;flex-direction:column;gap:.75rem">
+            <div class="flex-between" style="font-size:.88rem">
+              <span style="color:var(--text-muted)">Platform</span>
+              <span>Member Vaults v1.0</span>
+            </div>
+            <div class="flex-between" style="font-size:.88rem">
+              <span style="color:var(--text-muted)">Stack</span>
+              <span>PHP 8.2 + MySQL</span>
+            </div>
+            <div class="flex-between" style="font-size:.88rem">
+              <span style="color:var(--text-muted)">Plans</span>
+              <span>Free / Silver / Gold / Premium</span>
+            </div>
+            <div class="flex-between" style="font-size:.88rem">
+              <span style="color:var(--text-muted)">Subscription Logic</span>
+              <span>Auto-expiry + tier-locks</span>
+            </div>
+            <div class="divider"></div>
+            <div style="font-size:.8rem;color:var(--text-muted);line-height:1.6">
+              Use the user table below to change any user's plan. Changes take effect immediately with a new expiry date.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Users Table -->
+      <div class="glass" style="padding:1.75rem;border-radius:var(--radius-lg)">
+        <div class="flex-between mb-2" style="flex-wrap:wrap;gap:1rem">
+          <h2 style="font-size:1.1rem;font-weight:700">👥 User Management</h2>
+          <div class="search-bar">
+            <span>🔍</span>
+            <input type="text" id="user-search" placeholder="Search users…"/>
+          </div>
+        </div>
+
+        <div style="overflow-x:auto">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Role</th>
+                <th>Current Plan</th>
+                <th>Expires</th>
+                <th>Change Plan</th>
+              </tr>
+            </thead>
+            <tbody id="users-tbody">
+              <tr>
+                <td colspan="6" style="text-align:center;padding:2rem">
+                  <div class="spinner" style="margin:.5rem auto"></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 <span class="gradient-text">Member Vaults</span>. Admin Panel.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Sign In – Member Vaults</title>
+  <meta name="description" content="Sign in to your Member Vaults account and access your subscription dashboard."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="nav-logo" href="index.html"><span>🔐</span> Member Vaults</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="plans.html">Plans</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="register.html" class="btn btn-primary btn-sm">Create Account</a>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LOGIN -->
+  <div class="auth-page">
+    <div class="auth-card glass fade-up">
+      <div style="text-align:center;margin-bottom:2rem">
+        <div style="font-size:3rem;margin-bottom:.5rem">🔐</div>
+        <h1 class="auth-title">Welcome Back</h1>
+        <p class="auth-subtitle">Sign in to access your vault</p>
+      </div>
+
+      <form class="auth-form" id="login-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <input class="form-input" type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password"/>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" style="margin-top:.5rem">Sign In →</button>
+      </form>
+
+      <div class="auth-footer">
+        Don't have an account? <a href="register.html">Create one free</a>
+      </div>
+
+      <div class="divider"></div>
+      <div style="text-align:center">
+        <p class="small">🔒 Demo Admin: <code style="color:var(--neon-cyan)">admin@membervaults.com</code> / <code style="color:var(--neon-cyan)">Admin@1234</code></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# Member Vaults – Git Ignore
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# XAMPP / PHP environment
+config/db.php.local
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temp / one-off scripts
+fix_admin_password.php
